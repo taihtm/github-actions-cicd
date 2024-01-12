@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - "main"
+    tags:
+      - "v*"
 env:
   APP_STAGE: ${{ github.ref_name == 'main' && 'stag' || 'prod' }}
 
@@ -16,4 +18,5 @@ jobs:
       - name: Information
         run: |
           echo ${{ github.ref_name }}
-          echo ${{ vars.APP_STAGE }}
+          echo ${{ github.event }}
+          echo ${{ env.APP_STAGE }}
