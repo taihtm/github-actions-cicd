@@ -18,5 +18,5 @@ jobs:
       - name: Information
         run: |
           echo ${{ github.ref_name }}
-          echo ${{ github.event }}
+          echo ${{ github.event.action }}
           echo ${{ env.APP_STAGE }}
