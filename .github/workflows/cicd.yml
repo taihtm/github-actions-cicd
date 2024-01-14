@@ -1,13 +1,13 @@
 name: Test pipeline CI/CD
 run-name: ${{ github.actor }} is trigger run GitHub Actions 🚀
 on:
-  release:
-    types: [published]
+#   release:
+#     types: [published]
   push:
     branches:
       - "main"
-    # tags:
-    #   - "v*"
+    tags:
+      - "v*"
 env:
   APP_STAGE: ${{ github.ref_name == 'main' && 'stag' || 'prod' }}
 
